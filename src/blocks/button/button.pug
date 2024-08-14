@@ -3,3 +3,6 @@ mixin button(text, href, disabled, )
     a.button(class=allMods data-btn href=href, disabled=disabled)&attributes(attributes)=text
   else
     button.button(class=allMods, data-btn disabled=disabled)&attributes(attributes)=text
+      span.button__icon
+        +arrow-down
+

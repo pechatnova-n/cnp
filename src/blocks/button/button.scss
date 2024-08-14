@@ -1,30 +1,47 @@
 .button {
   position: relative;
   display: flex;
-  padding: 0 rem(24px);
-  height: rem(60px);
-  border-radius: rem(8px);
-  background: var(--1, #62215b);
-  justify-content: center;
-  align-items: center;
-  border: 1px solid transparent;
+  width: 100%;
+  height: rem(100px);
+  border-radius: rem(20px);
+  justify-content: flex-start;
+  align-items: flex-start;
   color: #fff;
-  font-family: TT Rounds Neue;
-  font-size: rem(16px);
-  font-weight: 620;
-  text-align: center;
+  font-family: $font;
+  font-size: rem(20px);
+  font-weight: 600;
   cursor: pointer;
-  text-transform: uppercase;
-  transition: $transition;
   white-space: nowrap;
-
+  background: #0070B8;
+  padding: rem(20px);
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: capitalize;
   &:hover {
-    background: var(--2, #c19f86);
+    opacity: 0.8;
   }
   &:disabled {
     background: #f0e7ef;
     pointer-events: none;
     color: var(--1, #62215b);
     opacity: 0.3;
+  }
+  &__icon {
+    position: absolute;
+    bottom: rem(8px);
+    right: rem(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    width: rem(40px);
+    height: rem(40px);
+    border-radius: rem(12px);
+    border: 1px solid #E4E4E4;
+    background: #FFF;
+    svg {
+      width: rem(20px);
+      height: rem(20px);
+    }
   }
 }
