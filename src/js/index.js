@@ -20,3 +20,29 @@ export const commonFunction = () => {
   accordion();
   modals();
 };
+
+
+
+//tabs
+let tabLinks = document.querySelectorAll('.delivery__radio');
+let tabLinksTemp;
+let tabContent = document.querySelectorAll('.delivery__tab-content');
+
+for (let elLink of tabLinks) {
+  elLink.addEventListener('click', e => {
+    e.preventDefault();
+
+    tabLinksTemp = tabLinks;
+    for (let elLinkTemp of tabLinksTemp) {
+      elLinkTemp.classList.remove('delivery__radio_active');
+    }
+    e.currentTarget.classList.add('delivery__radio_active');
+
+    for (let elContent of tabContent) {
+      elContent.classList.remove('delivery__tab-content_active');
+    }
+    document.getElementById('tab-' + e.currentTarget.getAttribute("id")).classList.add('delivery__tab-content_active');
+  });
+
+}
+

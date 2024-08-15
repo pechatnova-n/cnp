@@ -189,6 +189,7 @@
     padding: rem(12px) rem(20px) rem(15px) rem(68px);
     background: #FFF;
     height: rem(62px);
+    transition: all 0.4s ease;
     &_active {
       border: 1px solid #0070B8;
       background: #0070B8;
@@ -216,6 +217,8 @@
     line-height: rem(28px);
     font-weight: 400;
     color: #0B1226;
+    cursor: pointer;
+    transition: all 0.4s ease;
     @media#{media("<", d)} {
       font-size: rem(18px);
       line-height: rem(24px);
@@ -242,9 +245,7 @@
       height: rem(24px);
     }
   }
-  &__rad-input:checked ~ &__rad-check {
-    border: rem(6px) solid #0070B8;
-  }
+
 
 
 
@@ -408,8 +409,10 @@
     display: flex;
     flex-direction: column;
     row-gap: rem(40px);
+    margin-bottom: rem(40px);
     @media#{media("<", d)} {
       row-gap: rem(20px);
+      margin-bottom: rem(20px);
     }
   }
   &__wrap {

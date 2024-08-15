@@ -42,9 +42,18 @@
     color: #0B1226;
     background: #fff;
     border: 1px solid #E4E4E4;
-    &__icon {
-      border: 1px solid #fff;
+    &:hover {
+      box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
+    }
+    #{$comp}__icon {
+      border: 1px solid #0070B8;
       background: #0070B8;
+      svg {
+        transform: rotate(180deg);
+      }
+      svg > * {
+        stroke: #FFF;
+      }
     }
     @media#{media("<", d)} {
       padding-left: rem(56px);
@@ -54,14 +63,7 @@
         left: rem(8px);
         background: #0070B8;
         border: 1px solid #0070B8;
-        svg {
-          transform: rotate(180deg);
-        }
-        svg > * {
-          stroke: #FFF;
-        }
       }
-
     }
     @media#{media("<", m)} {
       width: 100%;
