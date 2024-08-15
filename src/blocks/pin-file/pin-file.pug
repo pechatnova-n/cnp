@@ -1,0 +1,19 @@
+mixin pin-file(mods)
+  -
+    const baseName = 'pin-file'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .pin-file(class=allMods)&attributes(attributes)
+    label.pin-file__text
+      input.pin-file__inp(type="file", name="file")
+      +clip.pin-file__svg
+      span.pin-file__span Прикрепить файл доверенности
+
+
