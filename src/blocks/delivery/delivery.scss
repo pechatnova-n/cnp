@@ -13,6 +13,14 @@
     right: 100%;
     width: rem(284px);
     height: rem(100px);
+    @media#{media("<", d)} {
+      top: 0;
+      right: auto;
+      left: 0;
+      width: rem(343px);
+      height: rem(48px);
+      padding-left: rem(56px);
+    }
   }
   &__inner {
     width: rem(888px);
@@ -38,12 +46,12 @@
     @media#{media("<", d)} {
       font-size: rem(32px);
       line-height: rem(32px);
-      padding: rem(64px) 0 rem(24px);
+      padding: rem(64px) 0 0 0;
     }
     @media#{media("<", m)} {
       font-size: rem(24px);
       line-height: rem(28px);
-      padding: rem(80px) 0 rem(24px);
+      padding: rem(80px) 0 0 0;
     }
   }
   &__h2 {
@@ -69,11 +77,6 @@
         padding: rem(16px) 0 rem(36px) 0;
       }
     }
-  }
-
-  &__radios {
-    display: flex;
-    column-gap: rem(20px);
   }
 
   &__clean {
@@ -148,26 +151,77 @@
   }
 
   //radio-tab
-  &__radio input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    font-family: $font;
-    font-size: rem(16px);
-    line-height: rem(19px);
-    font-weight: 400;
-    color: #747884;
+  &__tabs {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(40px);
+    @media#{media("<", d)} {
+      row-gap: rem(24px);
+    }
   }
-  &__radio label {
+  &__tab-content {
+    display: none;
+    &_active {
+      display: block;
+    }
+  }
+  &__radios {
+    display: flex;
+    column-gap: rem(20px);
+    @media#{media("<", d)} {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: rem(16px);
+    }
+    @media#{media("<", m)} {
+      grid-template-columns: 1fr;
+      grid-row-gap: rem(12px);
+    }
+  }
+  &__radio {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    justify-content: start;
+    border-radius: rem(20px);
+    border: 1px solid #E4E4E4;
+    padding: rem(12px) rem(20px) rem(15px) rem(68px);
+    background: #FFF;
+    height: rem(62px);
+    &_active {
+      border: 1px solid #0070B8;
+      background: #0070B8;
+      color: #fff;
+      #{$comp}__rad-label {
+        color: #fff;
+      }
+      #{$comp}__rad-check {
+        border: rem(6px) solid #fff;
+        background: #0070B8;
+      }
+    }
+    @media#{media("<", d)} {
+      border-radius: rem(12px);
+      padding: rem(10px) rem(10px) rem(10px) rem(52px);
+      height: rem(45px);
+    }
+  }
+  &__rad-input {
+    display: none;
+  }
+  &__rad-label {
     font-family: $font;
     font-size: rem(24px);
-    line-height: rem(24px);
+    line-height: rem(28px);
     font-weight: 400;
-    color: #747884;
+    color: #0B1226;
+    @media#{media("<", d)} {
+      font-size: rem(18px);
+      line-height: rem(24px);
+    }
   }
-  &__check {
+  &__rad-check {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -182,42 +236,16 @@
     background: #fff;
     flex-shrink: 0;
     transition: all 0.4s ease;
-  }
-  &__radio input:checked ~ &__check {
-    border: rem(6px) solid #0070B8;
-  }
-  &__radio {
-    display: flex;
-    position: relative;
-    cursor: pointer;
-    gap: rem(12px);
-    align-items: center;
-    justify-content: start;
-    font-family: $font;
-    font-size: rem(16px);
-    line-height: rem(19px);
-    font-weight: 400;
-    color: #747884;
-    border-radius: rem(20px);
-    border: 1px solid #E4E4E4;
-    padding: rem(12px) rem(20px) rem(15px) rem(68px);
-    background: #FFF;
-    height: rem(62px);
-    &_active {
-      border-radius: rem(20px);
-      border: 1px solid #0070B8;
-      padding: rem(12px) rem(20px) rem(15px) rem(68px);
-      background: #0070B8;
-      color: #fff;
-      #{$comp}__label {
-        color: #fff;
-      }
-      #{$comp}__check {
-        border: rem(6px) solid #fff;
-        background: #0070B8;
-      }
+    @media#{media("<", d)} {
+      left: rem(16px);
+      width: rem(24px);
+      height: rem(24px);
     }
   }
+  &__rad-input:checked ~ &__rad-check {
+    border: rem(6px) solid #0070B8;
+  }
+
 
 
 

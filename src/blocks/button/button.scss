@@ -1,4 +1,5 @@
 .button {
+  $comp: &;
   position: relative;
   display: flex;
   width: 100%;
@@ -40,10 +41,30 @@
   &__invers {
     color: #0B1226;
     background: #fff;
-    border: #E4E4E4;
+    border: 1px solid #E4E4E4;
     &__icon {
       border: 1px solid #fff;
       background: #0070B8;
+    }
+    @media#{media("<", d)} {
+      padding-left: rem(56px);
+      #{$comp}__icon {
+        bottom: rem(8px);
+        right: auto;
+        left: rem(8px);
+        background: #0070B8;
+        border: 1px solid #0070B8;
+        svg {
+          transform: rotate(180deg);
+        }
+        svg > * {
+          stroke: #FFF;
+        }
+      }
+
+    }
+    @media#{media("<", m)} {
+      width: 100%;
     }
   }
   @media#{media("<", d)} {
