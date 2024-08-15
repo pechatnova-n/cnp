@@ -47,6 +47,7 @@ mixin delivery(mods)
                     input.delivery__input#inp6(type="radio", name="deliv2", value="3")
                     span.delivery__pict
                     label.delivery__elem-text(for="inp6") Доверенное лицо
+
                 .delivery__cust-data
                   input.delivery__main-inp(type="text", placeholder="Наименование", required)
                   input.delivery__main-inp(type="text", placeholder="ИНН (необязательно)", required)
@@ -55,12 +56,14 @@ mixin delivery(mods)
                 hr
                 hr
                 hr
+
                 .delivery__cust-data
                   +pin-file
 
                 hr
                 hr
                 hr
+
                 .delivery__cust-data
                   +pin-file
               p.delivery__info <span>*</span> Если данной информации нет на момент заполнения шаблона, то предоставление необходимо после информирования о дате забора.
@@ -85,7 +88,19 @@ mixin delivery(mods)
 
                 .delivery__cust-data
                   input.delivery__main-inp(type="text", placeholder="Адрес", required)
-              p.delivery__info <span>*</span> Возможна отгрузка по скану доверенности, с гарантией дальнейшей отправки оригинала по почте. Доверенность от даты составления шаблона.
+                  p.delivery__info <span>*</span> Возможна отгрузка по скану доверенности, с гарантией дальнейшей отправки оригинала по почте. Доверенность от даты составления шаблона.
+                hr
+                hr
+                hr
+                .delivery__cust-data
+                  input.delivery__main-inp(type="text", placeholder="Адрес", required)
+                p.delivery__info <span>*</span> Возможна отгрузка по скану доверенности, с гарантией дальнейшей отправки оригинала по почте. Доверенность от даты составления шаблона.
+                hr
+                hr
+                hr
+                .delivery__cust-data
+                  input.delivery__main-inp(type="text", placeholder="Адрес", required)
+                p.delivery__info <span>*</span> Возможна отгрузка по скану доверенности, с гарантией дальнейшей отправки оригинала по почте. Доверенность от даты составления шаблона.
 
             section.delivery__section
               h2.delivery__h2.delivery__h2_padd Дополнительные требования к доставке
