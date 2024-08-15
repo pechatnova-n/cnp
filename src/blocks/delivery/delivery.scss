@@ -62,9 +62,12 @@
       color: #0070B8;
     }
     @media#{media("<", d)} {
-      padding: rem(16px) 0 rem(36px) 0;
+      padding: rem(16px) 0 0 0;
       font-size: rem(20px);
       line-height: rem(24px);
+      &_padd {
+        padding: rem(16px) 0 rem(36px) 0;
+      }
     }
   }
 
@@ -128,6 +131,19 @@
       letter-spacing: -1%;
       font-weight: 400;
       color: #747884;
+    }
+    @media#{media("<", d)} {
+      height: rem(128px);
+      padding: rem(16px) rem(20px);
+      font-size: rem(16px);
+      line-height: rem(25px);
+      &::placeholder {
+        font-size: rem(16px);
+        line-height: rem(25px);
+      }
+    }
+    @media#{media("<", m)} {
+      height: rem(154px);
     }
   }
 
@@ -207,29 +223,20 @@
 
   &__elem {
     position: relative;
-    padding-left: rem(52px);
-    display: flex;
-    column-gap: rem(16px);
+    padding-left: rem(48px);
+    @media#{media("<", d)} {
+      padding-left: rem(36px);
+    }
   }
   &__input {
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    font-family: $font;
-    font-size: rem(16px);
-    line-height: rem(19px);
-    font-weight: 400;
-    color: #747884;
+    display: none;
   }
 
   &__pict {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: rem(20px);
+    top: rem(5px);
+    left: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
     width: rem(32px);
     height: rem(32px);
@@ -237,10 +244,19 @@
     border: rem(2px) solid #E4E4E4;
     background: #fff;
     flex-shrink: 0;
-    transition: all 0.4s ease;
+    transition: border 0.2s ease;
+    box-sizing: border-box;
+    @media#{media("<", d)} {
+      top: rem(2px);
+      width: rem(24px);
+      height: rem(24px);
+    }
   }
   &__elem input:checked ~ &__pict {
     border: rem(8px) solid #0070B8;
+    @media#{media("<", d)} {
+      border: rem(5px) solid #0070B8;
+    }
   }
   &__elem-text {
     font-family: $font;
@@ -248,6 +264,10 @@
     line-height: rem(38px);
     font-weight: 400;
     color: #0B1226;
+    @media#{media("<", d)} {
+      font-size: rem(16px);
+      line-height: rem(25px);
+    }
   }
 
 
@@ -267,20 +287,12 @@
     font-weight: 400;
     color: #747884;
     @media #{media('>',d)} {
-      &:hover {
-        .checkmark {
-          border: rem(2px) solid var(--unnamed, #62215b);
-        }
-      }
+
     }
 
   }
   &__form-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+    display: none;
   }
   &__check-label {
     font-family: $font;
@@ -288,6 +300,9 @@
     line-height: rem(19px);
     font-weight: 400;
     color: #747884;
+    @media#{media("<", d)} {
+      font-size: rem(14px);
+    }
   }
   &__policy {
     display: inline-flex;
@@ -300,6 +315,12 @@
     border-bottom: 1px solid transparent;
     &:hover {
       border-bottom: 1px solid currentColor;
+    }
+    @media#{media("<", d)} {
+      display: inline;
+      margin-left: rem(4px);
+      font-size: rem(14px);
+      line-height: rem(19px);
     }
   }
   &__checkmark {
@@ -323,6 +344,15 @@
     svg > * {
       stroke: #0B1226;
     }
+    @media#{media("<", d)} {
+      width: rem(24px);
+      height: rem(24px);
+      border: rem(1px) solid #E4E4E4;
+      svg {
+        height: rem(16px);
+        width: rem(16px);
+      }
+    }
   }
   &__form-checkbox input:checked ~ &__checkmark {
     svg {
@@ -330,11 +360,6 @@
     }
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    row-gap: rem(40px);
-  }
 
   &__info {
     font-family: $font;
@@ -346,12 +371,18 @@
     span {
       color: #0070B8;
     }
+    @media#{media("<", d)} {
+      font-size: rem(16px);
+    }
   }
 
   &__section {
     display: flex;
     flex-direction: column;
     row-gap: rem(40px);
+    @media#{media("<", d)} {
+      row-gap: rem(20px);
+    }
   }
   &__wrap {
     display: flex;
@@ -391,6 +422,17 @@
       letter-spacing: -1%;
       font-weight: 400;
       color: #747884;
+    }
+    @media#{media("<", d)} {
+      height: rem(48px);
+      padding: rem(11px) rem(16px);
+      font-size: rem(16px);
+      line-height: rem(25px);
+      border-radius: rem(12px);
+      &::placeholder {
+        font-size: rem(16px);
+        line-height: rem(25px);
+      }
     }
   }
 

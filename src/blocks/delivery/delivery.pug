@@ -12,7 +12,7 @@ mixin delivery(mods)
 
   .delivery(class=allMods)&attributes(attributes)
     +button("Назад в заказы").invers.delivery__back
-    .delivery__inner
+    form.delivery__inner
       h1.delivery__h1 Заявка на отгрузку
       section.delivery__tabs
         h2.delivery__h2 Способ доставки
@@ -83,25 +83,25 @@ mixin delivery(mods)
 
 
       section.delivery__section
-        h2.delivery__h2 Дополнительные требования к доставке
+        h2.delivery__h2.delivery__h2_padd Дополнительные требования к доставке
           p.delivery__clean
             +rotate-left
             span.delivery__span Очистить все
 
-        form.delivery__form
-          .delivery__form-textarea
-            textarea.delivery__textarea#txt1(placeholder="Комментарий (например, инструкция, паспорт и другое). Если доставка через ТК, укажите вид упаковки")
 
-          .delivery__form-checkbox
-            input.delivery__checkbox#inp3(type="checkbox")
-            span.delivery__checkmark
-              +tick
-            label.delivery__check-label(for="inp3") Нажимая на кнопку «Отправить», я принимаю
-              a(href="#").delivery__policy условия политики конфиденциальности
+        .delivery__form-textarea
+          textarea.delivery__textarea#txt1(placeholder="Комментарий (например, инструкция, паспорт и другое). Если доставка через ТК, укажите вид упаковки")
 
-          +btns
-          .delivery__form-button
-            +button("Отправить")
+        .delivery__form-checkbox
+          input.delivery__checkbox#inp3(type="checkbox")
+          span.delivery__checkmark
+            +tick
+          label.delivery__check-label(for="inp3") Нажимая на кнопку «Отправить», я принимаю
+            a(href="#").delivery__policy условия политики конфиденциальности
+
+        +btns
+        .delivery__form-button
+          +button("Отправить")
 
 
 

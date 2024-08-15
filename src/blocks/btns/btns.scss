@@ -3,6 +3,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: rem(20px);
+  @media#{media("<", d)} {
+    grid-column-gap: rem(16px);
+  }
+  @media#{media("<", m)} {
+    grid-template-columns: 1fr;
+    grid-row-gap: rem(12px);
+  }
   &__previw {
     display: flex;
     align-items: center;
@@ -22,6 +29,12 @@
     &:hover {
       box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
     }
+    @media#{media("<", d)} {
+      height: rem(48px);
+      border-radius: rem(12px);
+      font-size: rem(16px);
+      line-height: rem(19px);
+  }
   }
   &__download {
     position: relative;
@@ -43,6 +56,14 @@
     &:hover {
       box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
     }
+    @media#{media("<", d)} {
+      height: rem(48px);
+      border-radius: rem(12px);
+      font-size: rem(16px);
+      line-height: rem(19px);
+      padding: 0 0 0 rem(24px);
+    }
+
   }
   &__span {
     display: flex;
@@ -59,6 +80,16 @@
     svg {
       width: rem(24px);
       height: rem(24px);
+    }
+    @media#{media("<", d)} {
+      right: rem(8px);
+      width: rem(34px);
+      height: rem(34px);
+      border-radius: rem(8px);
+      svg {
+        width: rem(16px);
+        height: rem(16px);
+      }
     }
   }
 }

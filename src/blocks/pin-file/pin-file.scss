@@ -13,6 +13,16 @@
     &:hover {
       box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
     }
+    @media#{media("<", d)} {
+      width: rem(352px);
+      height: rem(48px);
+      border-radius: rem(12px);
+      padding: rem(14px) rem(14px) rem(14px) rem(75px);
+    }
+    @media#{media("<", m)} {
+      width: 100%;
+      padding: rem(14px) rem(14px) rem(14px) rem(70px);
+    }
   }
   &__inp {
     opacity: 0;
@@ -34,6 +44,10 @@
     font-size: rem(20px);
     line-height: rem(24px);
     font-weight: 600;
+    @media#{media("<", d)} {
+      font-size: rem(14px);
+      line-height: rem(16px);
+    }
   }
   svg {
     position: absolute;
@@ -42,6 +56,10 @@
     left: 32px;
     width: rem(32px);
     height: rem(32px);
+    @media#{media("<", d)} {
+      left: 48px;
+      width: rem(24px);
+      height: rem(24px);
+    }
   }
-
 }
