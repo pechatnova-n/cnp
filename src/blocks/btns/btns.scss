@@ -1,0 +1,64 @@
+.btns {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: rem(20px);
+  &__previw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(80px);
+    border: 1px solid #E4E4E4;
+    border-radius: rem(20px);
+    background-color: #FFF;
+    padding: rem(10px);
+    cursor: pointer;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    font-family: $font;
+    font-weight: 600;
+    color: #0B1226;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__download {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: rem(80px);
+    border: 1px solid #E4E4E4;
+    border-radius: rem(20px);
+    background-color: #FFF;
+    padding: 0 0 0 rem(24px);
+    cursor: pointer;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    font-family: $font;
+    font-weight: 600;
+    color: #0B1226;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(12px);
+    width: rem(60px);
+    height: rem(60px);
+    border: 1px solid #E4E4E4;
+    border-radius: rem(12px);
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+    }
+  }
+}

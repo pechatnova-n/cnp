@@ -11,97 +11,97 @@ mixin delivery(mods)
     }
 
   .delivery(class=allMods)&attributes(attributes)
+    +button("Назад в заказы").invers.delivery__back
     .delivery__inner
       h1.delivery__h1 Заявка на отгрузку
-      h2.delivery__h2 Способ доставки
-      .delivery__radios
-        .delivery__radio.delivery__radio_active
-          input.delivery__input#inp1(type="radio", name="deliv", value="1")
-          span.delivery__check
-          label.delivery__label(for="inp1") Самовывоз
-        .delivery__radio
-          input.delivery__input#inp2(type="radio", name="deliv", value="2")
-          span.delivery__check
-          label.delivery__label(for="inp2") Транспортной компанией
+      section.delivery__tabs
+        h2.delivery__h2 Способ доставки
+        .delivery__radios
+          .delivery__radio.delivery__radio_active
+            input.delivery__input#inp1(type="radio", name="deliv", value="1")
+            span.delivery__check
+            label.delivery__label(for="inp1") Самовывоз
+          .delivery__radio
+            input.delivery__input#inp2(type="radio", name="deliv", value="2")
+            span.delivery__check
+            label.delivery__label(for="inp2") Транспортной компанией
 
-      section.delivery__customer
-        h2.delivery__h2 Кто будет забирать **
-        .delivery__radio-list
-          .delivery__radio-elem
-            input.delivery__input#inp4(type="radio", name="deliv2", value="1")
-            span.delivery__pict
-            label.delivery__elem-text(for="inp4") Конечный получатель
-          .delivery__radio-elem
-            input.delivery__input#inp5(type="radio", name="deliv2", value="2")
-            span.delivery__pict
-            label.delivery__elem-text(for="inp5") Транспортная компания
-          .delivery__radio-elem
-            input.delivery__input#inp6(type="radio", name="deliv2", value="3")
-            span.delivery__pict
-            label.delivery__elem-text(for="inp6") Доверенное лицо
-        .delivery__cust-data
-          input.delivery__main-inp(type="text", placeholder="Наименование", required)
-          input.delivery__main-inp(type="text", placeholder="ИНН (необязательно)", required)
-          +pin-file
+      section.delivery__section
+        h2.delivery__h2 Кто будет забирать
+          span.delivery__h2_blue **
+        .delivery__wrap
+          .delivery__list
+            .delivery__elem
+              input.delivery__input#inp4(type="radio", name="deliv2", value="1")
+              span.delivery__pict
+              label.delivery__elem-text(for="inp4") Конечный получатель
+            .delivery__elem
+              input.delivery__input#inp5(type="radio", name="deliv2", value="2")
+              span.delivery__pict
+              label.delivery__elem-text(for="inp5") Транспортная компания
+            .delivery__elem
+              input.delivery__input#inp6(type="radio", name="deliv2", value="3")
+              span.delivery__pict
+              label.delivery__elem-text(for="inp6") Доверенное лицо
+          .delivery__cust-data
+            input.delivery__main-inp(type="text", placeholder="Наименование", required)
+            input.delivery__main-inp(type="text", placeholder="ИНН (необязательно)", required)
+            +pin-file
+          .delivery__cust-data
+            +pin-file
+          .delivery__cust-data
+            +pin-file
         p.delivery__info <span>*</span> Если данной информации нет на момент заполнения шаблона, то предоставление необходимо после информирования о дате забора.
 
 
-      section.delivery__customer
+      section.delivery__section
         h2.delivery__h2 Вариант отгрузки документов
-        .delivery__radio-list
-          .delivery__radio-elem
-            input.delivery__input#inp7(type="radio", name="deliv2", value="1")
-            span.delivery__pict
-            label.delivery__elem-text(for="inp7") Оригиналы отгрузочных документов передать с грузом (доверенному лицу)
-          .delivery__radio-elem
-            input.delivery__input#inp8(type="radio", name="deliv2", value="2")
-            span.delivery__pict
-            label.delivery__elem-text(for="inp8") Оригиналы отгрузочных документов вложить в ящик с грузом
-          .delivery__radio-elem
-            input.delivery__input#inp9(type="radio", name="deliv2", value="3")
-            span.delivery__pict
-            label.delivery__elem-text(for="inp9") Отправка третьим лицам, документы с ценами не прикладывать к грузу, оригиналы отгрузочных документов отправить почтой по адресу
+        .delivery__wrap
+          .delivery__list
+            .delivery__elem
+              input.delivery__input#inp7(type="radio", name="deliv2", value="1")
+              span.delivery__pict
+              label.delivery__elem-text(for="inp7") Оригиналы отгрузочных документов передать с грузом (доверенному лицу)
+            .delivery__elem
+              input.delivery__input#inp8(type="radio", name="deliv2", value="2")
+              span.delivery__pict
+              label.delivery__elem-text(for="inp8") Оригиналы отгрузочных документов вложить в ящик с грузом
+            .delivery__elem
+              input.delivery__input#inp9(type="radio", name="deliv2", value="3")
+              span.delivery__pict
+              label.delivery__elem-text(for="inp9") Отправка третьим лицам, документы с ценами не прикладывать к грузу, оригиналы отгрузочных документов отправить почтой по адресу
+
+          .delivery__cust-data
+            input.delivery__main-inp(type="text", placeholder="Адрес", required)
+          .delivery__cust-data
+            input.delivery__main-inp(type="text", placeholder="Адрес", required)
+          .delivery__cust-data
+            input.delivery__main-inp(type="text", placeholder="Адрес", required)
+
         p.delivery__info <span>*</span> * Возможна отгрузка по скану доверенности, с гарантией дальнейшей отправки оригинала по почте. Доверенность от даты составления шаблона.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      header.delivery__header
+      section.delivery__section
         h2.delivery__h2 Дополнительные требования к доставке
-        p.delivery__clean
-          +rotate-left
-          span.delivery__span Очистить все
-      form.delivery__form
-        .delivery__form-textarea
-          textarea.delivery__textarea#txt1(placeholder="Комментарий (например, инструкция, паспорт и другое). Если доставка через ТК, укажите вид упаковки")
+          p.delivery__clean
+            +rotate-left
+            span.delivery__span Очистить все
 
-        .delivery__form-checkbox
-          input.delivery__checkbox#inp3(type="checkbox")
-          span.delivery__checkmark
-            +tick
-          label.delivery__check-label(for="inp3") Нажимая на кнопку «Отправить», я принимаю
-            a(href="#").delivery__policy условия политики конфиденциальности
+        form.delivery__form
+          .delivery__form-textarea
+            textarea.delivery__textarea#txt1(placeholder="Комментарий (например, инструкция, паспорт и другое). Если доставка через ТК, укажите вид упаковки")
 
+          .delivery__form-checkbox
+            input.delivery__checkbox#inp3(type="checkbox")
+            span.delivery__checkmark
+              +tick
+            label.delivery__check-label(for="inp3") Нажимая на кнопку «Отправить», я принимаю
+              a(href="#").delivery__policy условия политики конфиденциальности
 
-
-
-        .delivery__form-button
-          +button("отправить")
+          +btns
+          .delivery__form-button
+            +button("Отправить")
 
 
 

@@ -1,0 +1,17 @@
+mixin btns(mods)
+  -
+    const baseName = 'btns'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .btns(class=allMods)&attributes(attributes)
+    a.btns__previw(href="#") Предварительный просмотр
+    a.btns__download(href="#" download) Скачать заявку в PDF
+      span.btns__span
+        +ic-download

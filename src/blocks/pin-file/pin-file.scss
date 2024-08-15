@@ -9,6 +9,10 @@
     background-color: #FFF;
     padding: rem(18px) rem(18px) rem(18px) rem(72px);
     cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 rem(15px) 0 rgba(0, 0, 0, 0.1);
+    }
   }
   &__inp {
     opacity: 0;

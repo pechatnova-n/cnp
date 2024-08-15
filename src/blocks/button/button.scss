@@ -16,15 +16,8 @@
   padding: rem(20px);
   transition: all 0.5s ease-in-out;
   border: none;
-  text-transform: capitalize;
   &:hover {
     opacity: 0.8;
-  }
-  &:disabled {
-    background: #f0e7ef;
-    pointer-events: none;
-    color: var(--1, #62215b);
-    opacity: 0.3;
   }
   &__icon {
     position: absolute;
@@ -43,5 +36,18 @@
       width: rem(20px);
       height: rem(20px);
     }
+  }
+
+  &__invers {
+    color: #0B1226;
+    background: #fff;
+    border: #E4E4E4;
+    &__icon {
+      border: 1px solid #fff;
+      background: #0070B8;
+    }
+  }
+  @media#{media("<", d)} {
+
   }
 }
