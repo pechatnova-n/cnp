@@ -4,54 +4,75 @@
   color: #0B1226;
   font-family: $font;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  @media#{media("<", d)} {}
+  row-gap: rem(100px);
+  padding: rem(60px) 0;
+  @media#{media("<", d)} {
+    padding: rem(24px) 0;
+    row-gap: rem(24px);
+  }
 
   &__back {
     position: absolute;
     top: 0;
-    right: 100%;
+    left: 0;
     width: rem(284px);
     height: rem(100px);
     @media#{media("<", d)} {
-      top: 0;
-      right: auto;
-      left: 0;
+      position: relative;
       width: rem(343px);
       height: rem(48px);
       padding-left: rem(56px);
     }
   }
-  &__inner {
+  &__form {
+    margin: 0 auto;
     width: rem(888px);
     display: flex;
     flex-direction: column;
     row-gap: rem(80px);
     @media#{media("<", d)} {
-      width: rem(720px);
+      width: 100%;
       row-gap: rem(24px);
     }
     @media#{media("<", m)} {
-      width: rem(324px);
+      width: 100%;
+    }
+  }
+
+  &__header {
+    position: relative;
+    @media#{media("<", d)} {
+      width: rem(720px);
+      margin: 0 auto;
+      display: flex;flex-direction: column;
+      row-gap: rem(16px);
+    }
+    @media#{media("<", m)} {
+      width: 100%;
+      margin: 0;
     }
   }
   &__h1 {
+    position: relative;
+    width: rem(888px);
+    margin: 0 auto;
     font-family: $font;
     font-size: rem(60px);
     line-height: rem(60px);
     letter-spacing: -4%;
     font-weight: 600;
     color: #0B1226;
-    padding: rem(60px) 0 rem(20px);
     @media#{media("<", d)} {
+      width: 100%;
       font-size: rem(32px);
       line-height: rem(32px);
-      padding: rem(64px) 0 0 0;
     }
     @media#{media("<", m)} {
+      width: 100%;
       font-size: rem(24px);
       line-height: rem(28px);
-      padding: rem(80px) 0 0 0;
     }
   }
   &__h2 {
@@ -93,6 +114,7 @@
     letter-spacing: -1%;
     font-weight: 600;
     color: #747884;
+    cursor: pointer;
     svg {
       width: rem(24px);
       height: rem(24px);
@@ -159,6 +181,15 @@
       row-gap: rem(24px);
     }
   }
+  &__tab-block {
+    display: none;
+    margin-top: -40px;
+    &_active {
+      display: block;
+      margin-top: 0;
+    }
+  }
+
   &__tab-content {
     display: none;
     &_active {
@@ -309,7 +340,6 @@
     gap: rem(12px);
     align-items: center;
     justify-content: start;
-    height: rem(24px);
     font-family: $font;
     font-size: rem(16px);
     line-height: rem(19px);
@@ -467,6 +497,9 @@
     }
   }
 
+  hr {
+    width: 100%;
+  }
 
 
 

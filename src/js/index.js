@@ -37,6 +37,7 @@ for (let elLink of tabLinks) {
       elLinkTemp.classList.remove('delivery__radio_active');
     }
     e.currentTarget.classList.add('delivery__radio_active');
+    document.querySelector('.delivery__tab-block').classList.add('delivery__tab-block_active');
 
     for (let elContent of tabContent) {
       elContent.classList.remove('delivery__tab-content_active');
