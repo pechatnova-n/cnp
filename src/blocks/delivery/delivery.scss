@@ -324,6 +324,7 @@
     line-height: rem(38px);
     font-weight: 400;
     color: #0B1226;
+    cursor: pointer;
     @media#{media("<", d)} {
       font-size: rem(16px);
       line-height: rem(25px);
